@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- Optional: Your stylesheet for styling -->
+</head>
+<body>
+    <!-- <main>
+      <h2>Post Details</h2>
+      <div id="cardDetailsContainer"></div>
+    </main> -->
+
+    <div id="cardContent"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const selectedCardIndex = localStorage.getItem('selectedCardIndex');
+    const cards = JSON.parse(localStorage.getItem('cards')) || [];
+
+    if (selectedCardIndex !== null && cards[selectedCardIndex]) {
+        const card = cards[selectedCardIndex];
+
+        const contentDiv = document.getElementById('cardContent');
+        contentDiv.innerHTML = `
+             <div class="ql-editor">${card.content}</div>
+        `;
+    }
+});
+</script>
+</body>
+</html>
+<!-- <h2>${card.title}</h2>
+<img src="${card.image}" alt="Card Image">
+<p>${card.description}</p>
+<p>Category: ${card.category}</p> -->

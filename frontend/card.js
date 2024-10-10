@@ -124,8 +124,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Listen for changes in category checkboxes
     const categoryFilterForm = document.getElementById('categoryFilterForm');
     categoryFilterForm.addEventListener('change', function () {
-        const selectedCategory = categoryFilterForm.querySelector('input[name="blogType"]:checked')?.value; // Get selected category
-        const filteredCards = selectedCategory ? cards.filter(card => card.category === selectedCategory) : cards; // Filter cards
+        const selectedCategories = Array.from(categoryFilterForm.querySelectorAll('input[name="blogType"]:checked')).map(checkbox => checkbox.value);
+
+        const filteredCards = selectedCategories.length > 0 
+            ? cards.filter(card => selectedCategories.includes(card.category)) 
+            : cards;
+
         displayCards(filteredCards);
     });
 
@@ -162,5 +166,7 @@ function viewCardDetails(index) {
     localStorage.setItem('selectedCardIndex', index);
     window.location.href = 'content.html';
 }
+
+
 
 

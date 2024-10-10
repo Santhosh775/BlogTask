@@ -15,10 +15,10 @@
 
         <!-- Image upload code -->
         <div class="upload-container">
-          <span>Featured image</span>
+          <span>Featured image</span>&nbsp;<span class="star">*</span>
           <div id="drop-area" class="drop-area">
               <p>Drag and drop your image here</p>
-              <input type="file" id="fileElem" accept="image/*" onchange="handleFiles(this.files)" hidden>
+              <input type="file" id="fileElem" accept="image/*" onchange="handleFiles(this.files)" required hidden>
               <button id="browseBtn" onclick="document.getElementById('fileElem').click()">Browse</button>
           </div>
           <div id="gallery" class="gallery"></div>

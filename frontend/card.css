@@ -6,7 +6,10 @@
 .cardbody {
     display: flex;
     flex-direction: column; /* Changed to column to stack the search bar and cards */
-    background-color: #e5e5e5;
+    background-image: url(360_F_210459536_XmLDEcKq2DpeNLVmheuWeu9NM9aGKnih.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
